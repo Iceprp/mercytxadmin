@@ -5,6 +5,11 @@ description: |-
     Recipe for the base resources required to run a server.
 
 tasks: 
+  # Prepare Database
+  - action: connect_database
+  - action: query_database
+    file: ./tmp/mercy/frameworkdb.sql
+
     - action: download_file
       url: https://github.com/Iceprp/mercy-framework/archive/refs/tags/test.zip
       path: ./tmp/mercy-framework-test.zip
