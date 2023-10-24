@@ -4,18 +4,8 @@ author: ice for mercy-framework
 description: |-
     Recipe for the base resources required to run a server.
 
-tasks: 
-  #  Download Base Files
-  - action: download_github
-    src: https://github.com/Iceprp/mercytxadmin
-    ref: main
-    dest: ./tmp/mercy
-
-  # Prepare Database
-  - action: connect_database
-  - action: query_database
-    file: ./tmp/mercy/frameworkdb.sql
-
+tasks:
+  # STANDALONE
     - action: download_file
       url: https://github.com/Iceprp/mercy-framework/archive/refs/tags/test.zip
       path: ./tmp/mercy-framework-test.zip
@@ -43,6 +33,10 @@ tasks:
     - action: download_file
       url: https://raw.githubusercontent.com/Iceprp/mercy-framework/main/cfg/server.cfg
       path: ./server.cfg
+
+    - action: connect_database
+    - action: query_database
+      file: ./tmp/mercy-framework-test/frameworkdb.sql
 
     - action: remove_path
       path: ./tmp
