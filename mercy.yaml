@@ -5,6 +5,12 @@ description: |-
     Recipe for the base resources required to run a server.
 
 tasks: 
+  #  Download Base Files
+  - action: download_github
+    src: https://github.com/Iceprp/mercytxadmin
+    ref: main
+    dest: ./tmp/mercy
+
   # Prepare Database
   - action: connect_database
   - action: query_database
