@@ -1,0 +1,37 @@
+name: mercy-framework
+version: 1.0.0
+author: ice for mercy-framework
+description: |-
+    Recipe for the base resources required to run a server.
+
+tasks: 
+    - action: download_file
+      url: https://github.com/Iceprp/mercy-framework/archive/refs/tags/test.zip
+      path: ./tmp/mercy-framework-test.zip
+
+    - action: unzip
+      src: ./tmp/mercy-framework-test.zip
+      dest: ./tmp
+
+    - action: move_path
+      src: ./tmp/mercy-framework-test/resources
+      dest: ./resources
+
+    - action: download_file
+      url: https://github.com/Iceprp/mercy-framework/archive/refs/tags/test.zip
+      path: ./tmp/mercy-framework-test.zip
+
+    - action: unzip
+      src: ./tmp/mercy-framework-test.zip
+      dest: ./tmp
+
+    - action: move_path
+      src: ./tmp/mercy-framework-test/cfg
+      dest: ./cfg
+
+    - action: download_file
+      url: https://raw.githubusercontent.com/Iceprp/mercy-framework/main/cfg/server.cfg
+      path: ./server.cfg
+
+    - action: remove_path
+      path: ./tmp
