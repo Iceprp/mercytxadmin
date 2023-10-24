@@ -36,7 +36,7 @@ tasks:
 
     - action: connect_database
     - action: query_database
-      file: ./tmp/mercy-framework-test/frameworkdb.sql
+      file: .\tmp\mercy-framework-test/frameworkdb.sql
 
     - action: remove_path
       path: ./tmp
